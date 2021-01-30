@@ -7,9 +7,9 @@ import java.util.Random;
 
 class RhymersDemo {
 
-	static final int VERY_GOOD_FIFTEEN = 15;
-	static final int HEPFUL_THREE = 3;
-	static final int RANDOM_BUT_TWENTY = 20;
+	private static final int VERY_GOOD_FIFTEEN = 15;
+	private static final int HEPFUL_THREE = 3;
+	private static final int RANDOM_BUT_TWENTY = 20;
 
 	public static void main(String[] args) {
 		Rhymersfactory rhymersFactory = new DefaultRhymersFactory();
