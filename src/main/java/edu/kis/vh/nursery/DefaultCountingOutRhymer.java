@@ -6,28 +6,32 @@ public class DefaultCountingOutRhymer {
 	private static final int LAST_INDEX_OF_TABLE = SIZE_OF_TABLE - 1;
 	private final int[] numbers = new int[SIZE_OF_TABLE];
 
-	private int INITIAL_VALUE = -1;
-	private final int RETURN_VALUE = -1;
+	private int initialValue = -1;
+	private static final int RETURN_VALUE = -1;
+
+	public int getInitialValue() {
+		return initialValue;
+	}
 
 	protected void countIn(int in) {
 		if (!isFull()) {
-			numbers[++INITIAL_VALUE] = in;
+			numbers[++initialValue] = in;
 		}
 	}
 
 	protected boolean callCheck() {
-		return INITIAL_VALUE == RETURN_VALUE;
+		return initialValue == RETURN_VALUE;
 	}
 		
 	protected boolean isFull() {
-		return INITIAL_VALUE == LAST_INDEX_OF_TABLE;
+		return initialValue == LAST_INDEX_OF_TABLE;
 	}
 		
 	protected int peekaboo() {
 		if (callCheck()) {
 			return RETURN_VALUE;
 		} else {
-			return numbers[INITIAL_VALUE];
+			return numbers[initialValue];
 		}
 	}
 			
@@ -35,7 +39,7 @@ public class DefaultCountingOutRhymer {
 		if (callCheck()) {
 			return RETURN_VALUE;
 		} else {
-			return numbers[INITIAL_VALUE--];
+			return numbers[initialValue--];
 		}
 	}
 
